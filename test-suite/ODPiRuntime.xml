@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="ODPiRuntime">
+  	
+  	<test name="EnvironmentVariables">   	
+    	<classes>  
+       		 <class name="org.odpi.certification.runtime.EnvironmentVariables"/>
+    	</classes>
+  	</test>
+</suite>
