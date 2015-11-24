@@ -1,6 +1,7 @@
 package org.odpi.certification.runtime;
 
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 public class EnvironmentVariables {
@@ -184,6 +185,19 @@ public class EnvironmentVariables {
 		}else{
 			System.out.println("Could not find $HADOOP_TOOLS_PATH.");
 			Assert.assertTrue(false);
+		}
+	}
+	
+	@Test
+	public void warningTest(){
+		if (System.getProperty("ODPihadooptoolspath") != null) {
+			String POMValue=System.getProperty("ODPihadooptoolspath");
+			System.out.println("Found $HADOOP_TOOLS_PATH and is set to "+POMValue);
+			Assert.assertTrue(true);
+		}else{
+			System.out.println("Warning test, this should be a warning.");
+			Reporter.getCurrentTestResult().setAttribute("warn", "My warning message");
+			
 		}
 	}
 
